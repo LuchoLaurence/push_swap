@@ -1,4 +1,4 @@
-SRCS = 
+SRCS = push_swap.c 
 
 CC = gcc -Wall -Wextra -Werror
 
@@ -6,12 +6,18 @@ NAME = push_swap
 
 all : ${NAME}
 
-clean : 
-	rm -f *.0
+LIB : 
+	make -C ./libft
 
-flcean : clean
+${NAME} : LIB
+	$(CC) -I .push_swap.h -o ${NAME} ${SRCS} -L ./libft -lft
+clean : 
+	make clean -C ./libft
+
+fclean :
+	make fclean -C ./libft
 	rm -f ${NAME}
 
-re : flcean all
+re : fclean all
 
-.PHONY : all clean flcean re .c
+.PHONY : all clean fclean re .c
