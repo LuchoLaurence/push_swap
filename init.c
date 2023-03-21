@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 18:50:18 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/17 10:23:57 by llaurenc         ###   ########.fr       */
+/*   Created: 2023/03/21 14:20:55 by llaurenc          #+#    #+#             */
+/*   Updated: 2023/03/21 14:40:23 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strdup(const char *s1)
+int	*fill_pile(int argc, char **argv)
 {
-	size_t		i;
-	size_t		j;
-	char		*str;
+	int	*pile;
+	int	i;
 
-	j = 0;
-	i = ft_strlen(s1);
-	str = malloc(sizeof(char) * (i + 1));
-	if (str == NULL)
-		return (NULL);
-	while (j < i)
+	i = 2;
+	pile = malloc(sizeof(int) * (argc - 1));
+	while (argv[i])
 	{
-		str[j] = s1[j];
-		j++;
+		pile[i - 2] = ft_ps_atoi(argv[i]);
+		i++;
 	}
-	str[j] = '\0';
-	return (str);
+	return (pile);
 }

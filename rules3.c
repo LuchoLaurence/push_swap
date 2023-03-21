@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   rules3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 18:50:18 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/17 10:23:57 by llaurenc         ###   ########.fr       */
+/*   Created: 2023/03/21 11:19:35 by llaurenc          #+#    #+#             */
+/*   Updated: 2023/03/21 14:20:51 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_rrr(int *a, int size_a, int *b, int size_b)
 {
-	size_t		i;
-	size_t		j;
-	char		*str;
+	int	temp;
+	int	i;
 
-	j = 0;
-	i = ft_strlen(s1);
-	str = malloc(sizeof(char) * (i + 1));
-	if (str == NULL)
-		return (NULL);
-	while (j < i)
+	temp = a[size_a];
+	i = size_a;
+	while (i > 0)
 	{
-		str[j] = s1[j];
-		j++;
+		a[i] = a[i - 1];
+		i--;
 	}
-	str[j] = '\0';
-	return (str);
+	a[0] = temp;
+	temp = b[size_b];
+	i = size_b;
+	while (i > 0)
+	{
+		b[i] = b[i - 1];
+		i--;
+	}
+	b[0] = temp;
+	ft_putstr_fd("rrr\n", 1);
 }

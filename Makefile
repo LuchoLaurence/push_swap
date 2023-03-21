@@ -1,4 +1,4 @@
-SRCS = push_swap.c 
+SRCS = push_swap.c args_check.c args_check_utils.c rules.c rules2.c rules3.c init.c
 
 CC = gcc -Wall -Wextra -Werror
 
