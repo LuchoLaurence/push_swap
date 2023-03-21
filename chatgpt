@@ -1,0 +1,41 @@
+je cherche a faire le projet push_swap de 42 et j'aurai besoin d'aide, j'aimerai savoir ce dont j'ai besoin de savoir quoi mettre dans ma structure qui sera de ce type ci et qui sera une pile a et une autre structure sera ma pile b :
+ typedef struct s_pile {}
+
+t_pile *create_pile(int size)
+{
+    t_pile *pile;
+
+    pile = malloc(sizeof(t_pile));
+    if (!pile)
+        return (NULL);
+    pile->data = malloc(sizeof(int) * size);
+    if (!pile->data)
+        return (NULL);
+    pile->top = -1;
+    pile->size = size;
+    return (pile);
+}
+
+//ajouter une valeur au debut de la pile
+void push(t_pile *a, int x)
+{
+    if (a->top < a->size - 1)
+    {
+        a->top++;
+        a->data[a->top] = x;
+    }
+}
+
+//retirer le sommet de la pile
+int pop(t_pile *a)
+{
+    int x;
+
+    if (a->top > -1)
+    {
+        x = a->data[a->top];
+        a->top--;
+        return (x);
+    }
+    return (-1);
+}
