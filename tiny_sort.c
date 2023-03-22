@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules3.c                                           :+:      :+:    :+:   */
+/*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 11:19:35 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/22 10:43:11 by llaurenc         ###   ########.fr       */
+/*   Created: 2023/03/22 14:12:24 by llaurenc          #+#    #+#             */
+/*   Updated: 2023/03/22 15:53:59 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rrr(t_pile *pile_a, t_pile *pile_b)
+void	ft_sort_tiny(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort)
 {
-	int	temp;
+	pile_a = pile_sort;
+	pile_b = pile_sort;
+	return ;
+}
+
+void	ft_sort_three(t_pile *pile_a)
+{
+	int	*arr;
 	int	i;
 
-	temp = pile_a->array[pile_a->size];
-	i = pile_a->size;
-	while (i > 0)
-	{
-		pile_a->array[i] = pile_a->array[i - 1];
-		i--;
-	}
-	pile_a->array[0] = temp;
-	temp = pile_b->array[pile_b->size];
-	i = pile_b->size;
-	while (i > 0)
-	{
-		pile_b->array[i] = pile_b->array[i - 1];
-		i--;
-	}
-	pile_b->array[0] = temp;
-	ft_putstr_fd("rrr\n", 1);
+	arr = pile_a->array;
+	i = 0;
+	if (arr[0] > arr[1] && arr[1] > arr[2])
+		
+	return ;
+}
+
+void	ft_sort_five(t_pile *pile_a, t_pile *pile_b)
+{
+	pile_a = 0;
+	pile_b = 0;
+	return ;
 }

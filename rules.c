@@ -6,7 +6,7 @@
 /*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 09:05:52 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/21 11:39:58 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:42:55 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,91 +14,91 @@
 
 //debut des fonctions de tri obligatoire
 
-void	ft_sa(int *a, int size_a)
+void	ft_sa(t_pile *pile)
 {
 	int	temp;
 
-	if (size_a < 2)
+	if (pile->size < 2)
 		return ;
-	temp = a[0];
-	a[0] = a[1];
-	a[1] = temp;
+	temp = pile->array[0];
+	pile->array[0] = pile->array[1];
+	pile->array[1] = temp;
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	ft_sb(int *b, int size_b)
+void	ft_sb(t_pile *pile)
 {
 	int	temp;
 
-	if (size_b < 2)
+	if (pile->size < 2)
 		return ;
-	temp = b[0];
-	b[0] = b[1];
-	b[1] = temp;
-	ft_putstr_fd("sb\n", 1);
+	temp = pile->array[0];
+	pile->array[0] = pile->array[1];
+	pile->array[1] = temp;
+	ft_putstr_fd("sa\n", 1);
 }
 
-void	ft_ss(int *a, int *b, int size_a, int size_b)
+void	ft_ss(t_pile *pile_a, t_pile *pile_b)
 {
 	int	temp;
 
-	if (size_a < 2)
+	if (pile_a->size < 2)
 		return ;
-	if (size_b < 2)
+	if (pile_b->size < 2)
 		return ;
-	temp = a[0];
-	a[0] = a[1];
-	a[1] = temp;
-	temp = b[0];
-	b[0] = b[1];
-	b[1] = temp;
+	temp = pile_a->array[0];
+	pile_a->array[0] = pile_a->array[1];
+	pile_a->array[1] = temp;
+	temp = pile_b->array[0];
+	pile_b->array[0] = pile_b->array[1];
+	pile_b->array[1] = temp;
 	ft_putstr_fd("ss\n", 1);
 }
 
-void	ft_pa(int *a, int *b, int *size_a, int *size_b)
+void	ft_pa(t_pile *pile_a, t_pile *pile_b)
 {
 	int	i;
 
-	i = (*size_a);
-	if (*size_b == 0)
+	i = (pile_a->size - 1);
+	if (pile_b->size < 1)
 		return ;
 	while (i >= 0)
 	{
-		a[i + 1] = a[i];
+		pile_a->array[i + 1] = pile_a->array[i];
 		i--;
 	}
-	a[0] = b[0];
-	(*size_a)++;
+	pile_a->array[0] = pile_b->array[0];
+	(pile_a->size)++;
 	i = 1;
-	while (i < *size_b)
+	while (i < pile_b->size)
 	{
-		b[i - 1] = b[i];
+		pile_b->array[i - 1] = pile_b->array[i];
 		i++;
 	}
-	(*size_b) --;
+	(pile_b->size)--;
 	ft_putstr_fd("pa\n", 1);
 }
 
-void	ft_pb(int *a, int *b, int *size_a, int *size_b)
+void	ft_pb(t_pile *pile_a, t_pile *pile_b)
 {
 	int	i;
 
-	if (*size_a == 0)
+	i = (pile_b->size - 1);
+	if (pile_a->size < 1)
 		return ;
-	i = (*size_b - 1);
 	while (i >= 0)
 	{
-		b[i + 1] = b[i];
+		pile_b->array[i + 1] = pile_b->array[i];
 		i--;
 	}
-	b[0] = a[0];
-	(*size_b)++;
+	pile_b->array[0] = pile_a->array[0];
+	(pile_b->size)++;
 	i = 1;
-	while (i < (*size_a))
+	while (i < pile_a->size)
 	{
-		a[i - 1] = a[i];
+		pile_a->array[i - 1] = pile_a->array[i];
 		i++;
 	}
-	(*size_a)--;
+	(pile_a->size)--;
 	ft_putstr_fd("pb\n", 1);
 }
