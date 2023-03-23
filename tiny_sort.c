@@ -58,10 +58,7 @@ void	ft_sort_five(t_pile *pile_a, t_pile *pile_b)
 	int	cut;
 	
 	min = get_lower(pile_a);
-	if (pile_a->size%2 == 0)
-		cut = pile_a->size / 2;
-	else
-		cut = pile_a->size / 2 + 1;
+	cut = pile_a->size / 2 + 1;
 	
 	return ;
 }
