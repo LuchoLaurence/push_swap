@@ -53,7 +53,16 @@ void	ft_sort_three(t_pile *pile_a)
 
 void	ft_sort_five(t_pile *pile_a, t_pile *pile_b)
 {
-	pile_a = 0;
-	pile_b = 0;
+	int	min;
+	int	min1;
+	int	cut;
+	
+	min = get_lower(pile_a);
+	if (pile_a->size%2 == 0)
+		cut = pile_a->size / 2;
+	else
+		cut = pile_a->size / 2 + 1;
+	
+	
 	return ;
 }
