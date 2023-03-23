@@ -32,22 +32,16 @@ void	ft_sort_three(t_pile *pile_a)
 		ft_sa(pile_a);
 	}
 	if (arr[0] > arr[1] && arr[1] < arr[2] && arr[0] > arr[2]) 3 1 2
-	{
 		ft_ra(pile_a);
-	}
 	if (arr[0] > arr[1]  && arr[2] > arr[0]) 2 1 3
-	{
 		ft_sa(pile_a);
-	}
 	if (arr[0] < arr[1]  && arr[2] < arr[1] && arr[0] < arr[2]) 1 3 2
 	{
 		ft_sa(pile_a);
 		ft_ra(pile_a);
 	}
 	if (arr[0] < arr[1]  && arr[2] < arr[1] && arr[0] > arr[2]) 2 3 1
-	{
 		ft_rra(pile_a);
-	}
 	return ;
 }
 
