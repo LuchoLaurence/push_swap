@@ -63,6 +63,5 @@ void	ft_sort_five(t_pile *pile_a, t_pile *pile_b)
 	else
 		cut = pile_a->size / 2 + 1;
 	
-	
 	return ;
 }
