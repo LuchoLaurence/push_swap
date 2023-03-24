@@ -3,29 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:18:32 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/22 15:37:37 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/24 12:33:27 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_pile *pile_a, t_pile *pile_b)
-{	
-	t_pile	*pile_sort;
-	int		i;
+void push_swap(t_pile *pile_a, t_pile *pile_b)
+{
+	t_pile *pile_sort;
 
-	i = 0;
 	printf("push_swap\n");
 	pile_sort = ft_sort_pile(pile_a);
+	printf("pile_sort :\n");
 	print_pile(pile_sort);
+	printf("\n");
 	ft_all(pile_a, pile_b, pile_sort);
-	
 }
 
-void	ft_all(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort)
+void ft_all(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort)
 {
 	if (pile_a->size == 2)
 		ft_sa(pile_a);
@@ -37,9 +36,9 @@ void	ft_all(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort)
 		ft_sort_tiny(pile_a, pile_b, pile_sort);
 }
 
-void	print_pile(t_pile *pile)
+void print_pile(t_pile *pile)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < pile->size)
@@ -49,13 +48,11 @@ void	print_pile(t_pile *pile)
 	}
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_pile	*pile_a;
-	t_pile	*pile_b;
-	int		i;
+	t_pile *pile_a;
+	t_pile *pile_b;
 
-	i = 0;
 	if (argc < 2)
 		return (0);
 	if (!check_args(argv))

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:20:55 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/22 15:46:11 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/24 12:33:34 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_pile	*ft_sort_pile(t_pile *pile)
+t_pile *ft_sort_pile(t_pile *pile)
 {
-	t_pile	*pile_sort;
-	int		i;
+	t_pile *pile_sort;
+	int i;
 
 	i = 0;
 	pile_sort = create_pile(pile->size + 1);
@@ -28,9 +28,9 @@ t_pile	*ft_sort_pile(t_pile *pile)
 	return (pile_sort);
 }
 
-int	is_sorted(t_pile *pile)
+int is_sorted(t_pile *pile)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < pile->size - 1)
@@ -42,10 +42,10 @@ int	is_sorted(t_pile *pile)
 	return (1);
 }
 
-void	ft_sort(t_pile *pile)
+void ft_sort(t_pile *pile)
 {
-	int	i;
-	int	temp;
+	int i;
+	int temp;
 
 	while (!is_sorted(pile))
 	{
@@ -63,9 +63,9 @@ void	ft_sort(t_pile *pile)
 	}
 }
 
-t_pile	*fill_pile(t_pile *pile, char **argv)
+t_pile *fill_pile(t_pile *pile, char **argv)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < pile->size)
@@ -73,12 +73,13 @@ t_pile	*fill_pile(t_pile *pile, char **argv)
 		pile->array[i] = ft_ps_atoi(argv[i + 1]);
 		i++;
 	}
+	pile->index = 0;
 	return (pile);
 }
 
-t_pile	*create_pile(int argc)
+t_pile *create_pile(int argc)
 {
-	t_pile	*pile;
+	t_pile *pile;
 
 	pile = malloc(sizeof(t_pile));
 	if (!pile)
