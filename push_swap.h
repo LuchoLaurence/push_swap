@@ -6,7 +6,7 @@
 /*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:36:22 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/24 12:33:30 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:36:05 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_pile
 	int *array;
 	int size;
 	int index;
+	int chunk;
+	int nombre;
 } t_pile;
 
 int check_args(char **argv);
@@ -54,9 +56,15 @@ t_pile *ft_sort_pile(t_pile *pile);
 void ft_all(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort);
 void ft_sort_five(t_pile *pile_a, t_pile *pile_b);
 void ft_sort_three(t_pile *pile_a);
-void ft_sort_tiny(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort);
 int get_lower(t_pile *pile);
 void lower_to_top(t_pile *pile);
+void ft_sort_four(t_pile *pile_a, t_pile *pile_b);
+void ft_sort_hundred(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort);
+void index_to_top(t_pile *pile, t_pile *pile_sort);
+int get_index(t_pile *pile, t_pile *pile_sort);
+void ft_push_chunk(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort);
+void higher_to_top(t_pile *pile);
+int get_higher(t_pile *pile);
 
 void print_pile(t_pile *pile);
 

@@ -6,7 +6,7 @@
 /*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 09:17:32 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/24 12:56:10 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/28 09:33:42 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void ft_ra(t_pile *pile)
 		i++;
 	}
 	pile->array[pile->size - 1] = temp;
-	ft_putstr_fd("ra\n", 1);
+	//ft_putstr_fd("ra\n", 1);
 }
 
 void ft_rb(t_pile *pile)

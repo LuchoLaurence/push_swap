@@ -6,7 +6,7 @@
 /*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:18:32 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/24 12:33:27 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:01:43 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,18 @@ void push_swap(t_pile *pile_a, t_pile *pile_b)
 	ft_all(pile_a, pile_b, pile_sort);
 }
 
-void ft_all(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort)
+void ft_all(t_pile *pile_a, t_pile *pile_b, t_pile * pile_sort)
 {
 	if (pile_a->size == 2)
 		ft_sa(pile_a);
 	else if (pile_a->size == 3)
 		ft_sort_three(pile_a);
-	else if (pile_a->size < 6)
+	else if (pile_a->size == 4)
+		ft_sort_four(pile_a, pile_b);
+	else if (pile_a->size == 5)
 		ft_sort_five(pile_a, pile_b);
-	else if (pile_a->size < 101)
-		ft_sort_tiny(pile_a, pile_b, pile_sort);
+	else
+		ft_sort_hundred(pile_a, pile_b, pile_sort);
 }
 
 void print_pile(t_pile *pile)
@@ -62,6 +64,8 @@ int main(int argc, char **argv)
 	}
 	pile_a = create_pile(argc);
 	pile_b = create_pile(argc);
+	pile_b->size = 0;
+	pile_b->index = 0;
 	pile_a = fill_pile(pile_a, argv);
 	if (is_sorted(pile_a))
 		return (0);
