@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 		return (0);
 	if (argc == 2)
 	{
-		argv = ft_ps_split(argv[1], " ");
+		argv = ft_split(argv[1], " ");
 	}
 	if (!check_args(argv))
 	{
