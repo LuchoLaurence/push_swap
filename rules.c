@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 09:05:52 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/29 18:35:20 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/30 09:13:41 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	ft_pb(t_pile *pile_a, t_pile *pile_b)
 	if (pile_a->size < 1)
 		return ;
 	while (i >= 0)
-	
 	{
 		pile_b->array[i + 1] = pile_b->array[i];
 		i--;

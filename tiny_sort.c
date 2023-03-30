@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:12:24 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/27 12:15:37 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/30 11:44:06 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_lower(t_pile *pile)
+int	get_lower(t_pile *pile)
 {
-	int nb;
-	int i;
+	int	nb;
+	int	i;
 
 	i = 1;
 	nb = 0;
@@ -30,18 +30,18 @@ int get_lower(t_pile *pile)
 	return (nb);
 }
 
-void ft_sort_four(t_pile *pile_a, t_pile *pile_b)
+void	ft_sort_four(t_pile *pile_a, t_pile *pile_b)
 {
 	lower_to_top(pile_a);
 	ft_pb(pile_a, pile_b);
 	ft_sort_three(pile_a);
 	ft_pa(pile_a, pile_b);
-	return;
+	return ;
 }
 
-void ft_sort_three(t_pile *pile_a)
+void	ft_sort_three(t_pile *pile_a)
 {
-	int *arr;
+	int	*arr;
 
 	arr = pile_a->array;
 	if (arr[0] > arr[1] && arr[1] > arr[2])
@@ -49,26 +49,26 @@ void ft_sort_three(t_pile *pile_a)
 		ft_ra(pile_a);
 		ft_sa(pile_a);
 	}
-	if (arr[0] > arr[1] && arr[1] < arr[2] && arr[0] > arr[2])
+	else if (arr[0] > arr[1] && arr[1] < arr[2] && arr[0] > arr[2])
 		ft_ra(pile_a);
-	if (arr[0] > arr[1] && arr[2] > arr[0])
+	else if (arr[0] > arr[1] && arr[2] > arr[0])
 		ft_sa(pile_a);
-	if (arr[0] < arr[1] && arr[2] < arr[1] && arr[0] < arr[2])
+	else if (arr[0] < arr[1] && arr[2] < arr[1] && arr[0] < arr[2])
 	{
 		ft_sa(pile_a);
 		ft_ra(pile_a);
 	}
-	if (arr[0] < arr[1] && arr[2] < arr[1] && arr[0] > arr[2])
+	else if (arr[0] < arr[1] && arr[2] < arr[1] && arr[0] > arr[2])
 		ft_rra(pile_a);
-	return;
+	return ;
 }
 
-void lower_to_top(t_pile *pile)
+void	lower_to_top(t_pile *pile)
 {
-	int indexmin;
-	int cut;
+	int	indexmin;
+	int	cut;
+
 	indexmin = get_lower(pile);
-	//printf("lower to top : index min = %d\n", indexmin);
 	cut = pile->size / 2 + 1;
 	while (indexmin != pile->index)
 	{
@@ -85,10 +85,10 @@ void lower_to_top(t_pile *pile)
 				indexmin = 0;
 		}
 	}
-	return;
+	return ;
 }
 
-void ft_sort_five(t_pile *pile_a, t_pile *pile_b)
+void	ft_sort_five(t_pile *pile_a, t_pile *pile_b)
 {
 	lower_to_top(pile_a);
 	ft_pb(pile_a, pile_b);
@@ -97,5 +97,5 @@ void ft_sort_five(t_pile *pile_a, t_pile *pile_b)
 	ft_sort_three(pile_a);
 	ft_pa(pile_a, pile_b);
 	ft_pa(pile_a, pile_b);
-	return;
+	return ;
 }

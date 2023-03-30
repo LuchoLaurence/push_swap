@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   rules2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 09:17:32 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/28 09:33:42 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/03/30 10:55:41 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_ra(t_pile *pile)
+void	ft_ra(t_pile *pile)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	temp = pile->array[0];
 	i = 1;
@@ -25,13 +25,13 @@ void ft_ra(t_pile *pile)
 		i++;
 	}
 	pile->array[pile->size - 1] = temp;
-	//ft_putstr_fd("ra\n", 1);
+	ft_putstr_fd("ra\n", 1);
 }
 
-void ft_rb(t_pile *pile)
+void	ft_rb(t_pile *pile)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	temp = pile->array[0];
 	i = 1;
@@ -44,10 +44,10 @@ void ft_rb(t_pile *pile)
 	ft_putstr_fd("rb\n", 1);
 }
 
-void ft_rr(t_pile *pile_a, t_pile *pile_b)
+void	ft_rr(t_pile *pile_a, t_pile *pile_b)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	temp = pile_a->array[0];
 	i = 1;
@@ -68,10 +68,10 @@ void ft_rr(t_pile *pile_a, t_pile *pile_b)
 	ft_putstr_fd("rr\n", 1);
 }
 
-void ft_rra(t_pile *pile)
+void	ft_rra(t_pile *pile)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	temp = pile->array[pile->size - 1];
 	i = pile->size - 1;
@@ -84,10 +84,10 @@ void ft_rra(t_pile *pile)
 	ft_putstr_fd("rra\n", 1);
 }
 
-void ft_rrb(t_pile *pile)
+void	ft_rrb(t_pile *pile)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	temp = pile->array[pile->size - 1];
 	i = pile->size - 1;
