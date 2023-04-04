@@ -55,6 +55,8 @@ int	get_index(t_pile *pile, t_pile *pile_sort)
 
 	i = 0;
 	j = pile->size - 1;
+	if (pile_sort->size < pile->nombre)
+		pile->nombre = pile_sort->size;
 	while (pile->array[i] > pile_sort->array[pile->nombre - 1])
 	{
 		i++;

@@ -6,7 +6,7 @@
 /*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:36:22 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/30 13:42:30 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:33:07 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ int			get_index(t_pile *pile, t_pile *pile_sort);
 void		ft_push_chunk(t_pile *pile_a, t_pile *pile_b, t_pile *pile_sort);
 void		higher_to_top(t_pile *pile);
 int			get_higher(t_pile *pile);
-char		**ft_ps_split(char *arg, char c);
-
-void		print_pile(t_pile *pile);
+void		init_pile(int argc, char **argv);
+void		free_pile(t_pile *pile);
 
 #endif

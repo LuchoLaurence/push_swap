@@ -6,7 +6,7 @@
 /*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:19:35 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/03/30 09:18:04 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:31:12 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,10 @@ void	ft_rrr(t_pile *pile_a, t_pile *pile_b)
 	}
 	pile_b->array[0] = temp;
 	ft_putstr_fd("rrr\n", 1);
+}
+
+void	free_pile(t_pile *pile)
+{
+	free(pile->array);
+	free(pile);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaurenc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:37:13 by llaurenc          #+#    #+#             */
-/*   Updated: 2022/11/19 16:50:39 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/04/03 11:18:25 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 
 	i = 0;
-	j = 0;
+	j = 1;
 	if (!s)
 		return (NULL);
-	tab = malloc(sizeof(char *) * (ft_mot(s, c) + 1));
+	tab = malloc(sizeof(char *) * (ft_mot(s, c) + 2));
 	if (tab == NULL)
 		return (NULL);
+	tab [0] = "./push_swap";
 	while (s[i])
 	{
 		while (s[i] == c && s[i])

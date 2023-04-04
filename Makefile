@@ -6,10 +6,10 @@ NAME = push_swap
 all : ${NAME}
 
 LIB : 
-	make -C ./libft
+	@make -C ./libft
 
 ${NAME} : LIB
-	$(CC) -I .push_swap.h -o ${NAME} ${SRCS} -L ./libft -lft
+	@$(CC) -I .push_swap.h -o ${NAME} ${SRCS} -L ./libft -lft
 clean : 
 	make clean -C ./libft
 
