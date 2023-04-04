@@ -6,7 +6,7 @@
 /*   By: llaurenc <llaurenc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:18:32 by llaurenc          #+#    #+#             */
-/*   Updated: 2023/04/03 14:32:49 by llaurenc         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:15:56 by llaurenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ void	init_pile(int argc, char **argv)
 	pile_b->index = 0;
 	pile_a = fill_pile(pile_a, argv);
 	if (is_sorted(pile_a))
+	{
+		free_pile(pile_a);
+		free_pile(pile_b);
 		return ;
+	}
 	push_swap(pile_a, pile_b);
 	free_pile(pile_a);
 	free_pile(pile_b);
@@ -82,4 +86,5 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	init_pile(argc, argv);
+	system("leaks push_swap");
 }
